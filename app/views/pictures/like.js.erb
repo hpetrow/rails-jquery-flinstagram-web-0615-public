@@ -1,0 +1,6 @@
+var id = "<%= @picture.id %>";
+var heartClass = $('.like-btn[picture_id =' + id +'] > span').attr('class');
+
+$('#' + id).html('<%= j @picture.likes_message(current_user) %>');
+$('.like-btn[picture_id =' + id +'] > span').removeClass(heartClass);
+$('.like-btn[picture_id =' + id +'] > span').addClass('<%= j @picture.heart_class(current_user) %>');
